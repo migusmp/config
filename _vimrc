@@ -12,23 +12,27 @@ syntax on
 "Resalta la línea actual
 set cursorline
 
+set backspace=indent,eol,start
+
+
 " Guarda automáticamente cuando cambias de buffer
-set autowrite
+"set autowrite
 
 "Establece el número de espacios que se usan al insertar una tabulación
-set tabstop=4
+"set tabstop=4
 
 " Establece el número de espacios que se usan al apretar la tecla de
 " tabulación
-set shiftwidth=4
+"set shiftwidth=4
+"set expandtab
 
 
 "Ignora mayúsculas y minúsculas en la búsqueda
-set ignorecase
-set smartcase
+"set ignorecase
+"set smartcase
 
 " Habilita la búsqueda incremental
-set incsearch
+"set incsearch
 
 
 
@@ -67,6 +71,14 @@ Plug 'morhetz/gruvbox'
 
 " Finaliza la inicialización de vim-plug
 call plug#end()
+" Configuración de coc.nvim
+let g:coc_global_extensions = ['coc-rust-analyzer']
+"
+" Mapas de teclas para navegar y seleccionar las opciones de autocompletado
+inoremap <silent><expr> <C-Space> coc#refresh()
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"""))""))"")))"'']"
 
 " Configuración de NERDTree
 " Abrir NERDTree con F2
