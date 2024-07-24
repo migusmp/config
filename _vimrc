@@ -52,6 +52,9 @@ inoremap { {}<Esc>i
 inoremap " ""<Esc>i
 inoremap ' ''<Esc>i
 
+
+
+
 " colorscheme desert
 " colorscheme desert
 
@@ -72,8 +75,10 @@ Plug 'morhetz/gruvbox'
 " Finaliza la inicialización de vim-plug
 call plug#end()
 " Configuración de coc.nvim
-let g:coc_global_extensions = ['coc-rust-analyzer']
-"
+
+let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json', 'coc-tsserver']
+
+
 " Mapas de teclas para navegar y seleccionar las opciones de autocompletado
 inoremap <silent><expr> <C-Space> coc#refresh()
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
